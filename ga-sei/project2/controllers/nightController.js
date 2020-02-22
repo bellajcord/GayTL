@@ -52,6 +52,11 @@ nightRouter.post('/index', (req, res) => {
   });
 });
 
+//a route /newNight that renders the newNight.hbs form
+nightRouter.get('/newNight', (req, res) => {
+  res.render('night/newNight');
+});
+
 /* Step 6
  *
  * Export the router from the file.
