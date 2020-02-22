@@ -41,7 +41,7 @@ const healthRouter = express.Router()
 healthRouter.get('/', (req, res) => {
     healthApi.find().then(health => {
       console.log(health);
-      res.render('health/index', {health})
+      res.render('health/showHealth', {health})
     });
 });
 

@@ -36,10 +36,13 @@ const restRouter = express.Router()
  *
  * TODO: delete this handler; it's just a sample
  */ 
+//a GET index route that sends all restaurant to rest/index.hbs
 restRouter.get('/', (req, res) => {
-  res.send(restApi.getHelloWorldString())
-})
-
+  restApi.find().then(rest => {
+    console.log(health);
+    res.render('rest/restHealth', {rest})
+  });
+});
 /* Step 6
  *
  * Export the router from the file.
