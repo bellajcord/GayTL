@@ -43,6 +43,13 @@ restRouter.get('/', (req, res) => {
     res.render('rest/restHealth', {rest})
   });
 });
+
+//index route that creates new restaurant
+restRouter.post('/index', (req, res) => { 
+  restApi.create(req.body).then(() => {
+    res.redirect('/');
+  });
+});
 /* Step 6
  *
  * Export the router from the file.
