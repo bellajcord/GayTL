@@ -36,9 +36,26 @@ const healthRouter = express.Router()
  *
  * TODO: delete this handler; it's just a sample
  */ 
+
+//a GET index route that sends all health to health/index.hbs
 healthRouter.get('/', (req, res) => {
-  
-})
+    healthApi.find().then(health => {
+      console.log(health);
+      res.render('health/index', {health})
+    });
+});
+
+//index route that creates new health
+healthRouter.post('/index', (req, res) => { 
+  healthApi.create(req.body).then(() => {
+    res.redirect('/');
+  });
+});
+
+//a route /newHealth that renders the newHealth.hbs form
+healthRouter.get('/newHealth', (req, res) => {
+  res.render('health/newHealth');
+});
 
 /* Step 6
  *

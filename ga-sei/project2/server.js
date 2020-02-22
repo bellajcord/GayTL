@@ -67,7 +67,7 @@ app.set('view engine', 'hbs')
 app.use('/health', healthRouter)
 app.use('/nightlife', nightRouter)
 app.use('/restaurants', restRouter)
-app.use('/', indexRouter)
+//app.use('/', indexRouter)
 
 /* Step 5
  *

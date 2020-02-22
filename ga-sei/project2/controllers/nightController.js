@@ -36,9 +36,14 @@ const nightRouter = express.Router()
  *
  * TODO: delete this handler; it's just a sample
  */ 
+
+
 nightRouter.get('/', (req, res) => {
-  res.send(nightApi.getHelloWorldString())
-})
+  nightApi.find().then(night => {
+    console.log(night);
+    res.render('night/index', {night})
+  });
+});
 
 /* Step 6
  *
