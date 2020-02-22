@@ -37,7 +37,7 @@ const nightRouter = express.Router()
  * TODO: delete this handler; it's just a sample
  */ 
 
-
+//get all night life data and route to night/index
 nightRouter.get('/', (req, res) => {
   nightApi.find().then(night => {
     console.log(night);
