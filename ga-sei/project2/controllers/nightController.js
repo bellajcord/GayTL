@@ -45,6 +45,13 @@ nightRouter.get('/', (req, res) => {
   });
 });
 
+//index route that creates new nightlife
+nightRouter.post('/index', (req, res) => { 
+  nightApi.create(req.body).then(() => {
+    res.redirect('/');
+  });
+});
+
 /* Step 6
  *
  * Export the router from the file.
