@@ -50,6 +50,11 @@ restRouter.post('/index', (req, res) => {
     res.redirect('/');
   });
 });
+
+//a route /newRest that renders the newRest.hbs form
+restRouter.get('/newRest', (req, res) => {
+  res.render('rest/newRest');
+});
 /* Step 6
  *
  * Export the router from the file.
