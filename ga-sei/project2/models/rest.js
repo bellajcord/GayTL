@@ -34,3 +34,7 @@ function getRestById(restID) {
     return restCollection.findById({_id: issueId})
 }
 
+//function to create new rest
+function addNewRest(rest) {
+    return restCollection.create(rest)
+}
