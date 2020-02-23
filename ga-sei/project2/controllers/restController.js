@@ -21,16 +21,44 @@ restRouter.get('/', (req, res) => {
 });
 
 // a get route that shows newRest.hbs
-restRouter.get('/newRest' (req, res) => {
+restRouter.get('/newRest', (req, res) => {
   res.render('rest/newRest')
 });
 
+//show route to render rest 
+restRouter.get('/:restId', (req, res) => {
+  restApi.getRestById(req.params.restId).then(rest => {
+    res.render('rest/singleRest', {rest})
+  });
+});
 
-/* Step 6
- *
- * Export the router from the file.
- *
- */
+//edit 
+restRouter.get('/:restId/edit' (req, res) => {
+  restApi.getRestById(req.params.restId)
+});
+
+//createe
+
+restRouter.post('/', (req, res) => {
+  restApi.addNewRest(req.body)
+  .then(() => {
+    res.redirect('/rest')
+  });
+});
+
+//delete
+
+restRouter.delete('/:restId', (req, res) => {
+  restApi.deleteRest(req.params.restId)
+  .then(() => {
+    res.redirect('/rest')
+  });
+});
+
+
+
+// Step 6 Export the router from the file.
+
 module.exports = {
   restRouter
 }
