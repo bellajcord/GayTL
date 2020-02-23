@@ -13,7 +13,7 @@ const restRouter = express.Router()
 // Step 4 TODO: Put all request handlers here
  
 //a GET index route that sends all restaurant to rest/index.hbs
-restRouter.get('/', (req, res) => {
+restRouter.get('/rest', (req, res) => {
   restApi.find().then(rest => {
     console.log(health);
     res.render('rest/rest', {rest})
@@ -21,25 +21,25 @@ restRouter.get('/', (req, res) => {
 });
 
 // a get route that shows newRest.hbs
-restRouter.get('/newRest', (req, res) => {
+restRouter.get('/rest/newRest', (req, res) => {
   res.render('rest/newRest')
 });
 
 //show route to render rest 
-restRouter.get('/:restId', (req, res) => {
+restRouter.get('/rest/:restId', (req, res) => {
   restApi.getRestById(req.params.restId).then(rest => {
     res.render('rest/singleRest', {rest})
   });
 });
 
 //edit 
-restRouter.get('/:restId/edit', (req, res) => {
+restRouter.get('/rest/:restId/edit', (req, res) => {
   restApi.getRestById(req.params.restId)
 });
 
 //createe
 
-restRouter.post('/', (req, res) => {
+restRouter.post('/rest', (req, res) => {
   restApi.addNewRest(req.body)
   .then(() => {
     res.redirect('/rest')
