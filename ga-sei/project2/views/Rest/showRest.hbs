@@ -1,35 +1,34 @@
 <main>
 
-	<h2>You are viewing:
-
-		{{ rest.name }}
-
-	</h2>
+	<a href="/rest/new" class="btn btn-primary float-right mb-4">Add Restaurant</a>
 
 	<a href="/">Return to Home Page</a>
 
 	<div class="rest-container-show">
-		<h2 id="rest-name">
-
-				{{ rest.name }}
-
-		</h2>
-
-				<img src="{{ rest.img }}"/>
-
-		<br>
-		<h3>Description:</h3>
-			<p>
-
-				{{ rest.description }}
-
-			</p><br>
-		<h3>Location:</h3>
-			<p id="location">$
-
-				{{ rest.location }} </p><br>
-
-		</div>
+		<table class="table">
+			<thead>
+				<th>Name</th>
+				<th>Description</th>
+				<th>Location</th>
+				<th>Img</th>
+			</thead>
+			{{#each rest}}
+			<tr>
+				<td>
+					{{name}}
+				</td>
+				<td>
+					{{description}}
+				</td>
+				<td>
+					{{Location}}
+				</td>
+				<td>
+					{{img}}
+				</td>
+			</tr>
+			{{/each}}
+		</table>
 
 		<form action="/{{ rest.id }}?_method=DELETE" method="POST">
 			<input type="submit" value="Delete Restaurant"/>

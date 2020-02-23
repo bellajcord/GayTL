@@ -33,7 +33,7 @@ restRouter.get('/:restId', (req, res) => {
 });
 
 //edit 
-restRouter.get('/:restId/edit' (req, res) => {
+restRouter.get('/:restId/edit', (req, res) => {
   restApi.getRestById(req.params.restId)
 });
 
