@@ -31,7 +31,7 @@ function getAllRest() {
 //get a single rest by id
 
 function getRestById(restID) {
-    return restCollection.findById({_id: issueId})
+    return restCollection.findById({_id: restId})
 }
 
 //function to create new rest
@@ -41,5 +41,19 @@ function addNewRest(rest) {
 
 //update rest
 function updateRest(restId, rest) {
-    return restCollection.updateOne({_id: restId})
+    return restCollection.updateOne({_id: restId}, rest)
+}
+
+//delete rest
+function deleteRest(restId) {
+    return restCollection.deleteOne({_id: restId})
+}
+
+//export created functions
+module.exports = {
+    getAllRest,
+    getRestById,
+    addNewRest,
+    updateRest,
+    deleteRest
 }
