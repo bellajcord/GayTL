@@ -19,4 +19,18 @@ const restSchema = new Schema({
 
 });
 
-module.exports = mongoose.model('rest', restSchema);
+//export the schema
+let restCollection = mongoose.model('Rest', restSchema)
+
+//function to het all restaurants
+
+function getAllRest() {
+    return restCollection.find()
+}
+
+//get a single rest by id
+
+function getRestById(restID) {
+    return restCollection.findById({_id: issueId})
+}
+
