@@ -38,3 +38,8 @@ function getRestById(restID) {
 function addNewRest(rest) {
     return restCollection.create(rest)
 }
+
+//update rest
+function updateRest(restId, rest) {
+    return restCollection.updateOne({_id: restId})
+}
