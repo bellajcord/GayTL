@@ -30,7 +30,7 @@ function getAllRest() {
 
 //get a single rest by id
 
-function getRestById(restID) {
+function getRestById(restId) {
     return restCollection.findById({_id: restId})
 }
 
