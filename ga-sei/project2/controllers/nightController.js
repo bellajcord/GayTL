@@ -1,30 +1,13 @@
-/* Step 1 import express
- *
- */
+// Step 1 import express
+ 
 const express = require('express')
 
-/* Step 2
- *
- * Import the api files from the models
- *
- * TODO: change the file path to the models file you'll need to use.
- * TODO: rename this from `templateApi` to something more sensible (e.g:
- * `shopsAPI`)
- *
- * NOTE: You may need to import more than one API to create the 
- * controller you need.
- * 
- */
+// Step 2 Import the api files from the models
+ 
 const nightApi = require('../models/night.js')
 
-/* Step 3 
- * 
- * Create a new router.
- *
- * the router will "contain" all the request handlers that you define in this file.
- * TODO: rename this from templateRouter to something that makes sense. (e.g:
- * `shopRouter`)
- */
+// Step 3  Create a new router.
+ 
 const nightRouter = express.Router()
 
 /* Step 4
@@ -32,30 +15,50 @@ const nightRouter = express.Router()
  * TODO: Put all request handlers here
  */
 
-/* Step 5
- *
- * TODO: delete this handler; it's just a sample
- */ 
 
-//get all night life data and route to night/index
-nightRouter.get('/', (req, res) => {
+//a GET index route that sends all restaurant to rest/index.hbs
+nightRouter.get('/night', (req, res) => {
   nightApi.find().then(night => {
     console.log(night);
-    res.render('night/index', {night})
+    res.render('night/night', {night})
   });
 });
 
-//index route that creates new nightlife
-nightRouter.post('/index', (req, res) => { 
-  nightApi.create(req.body).then(() => {
-    res.redirect('/');
+// a get route that shows newRest.hbs
+nightRouter.get('/night/newNight', (req, res) => {
+  res.render('night/newNight')
+});
+
+//show route to render rest 
+nightRouter.get('/night/:nightId', (req, res) => {
+  nightApi.getNightById(req.params.nightId).then(night => {
+    res.render('night/singleNight', {night})
   });
 });
 
-//a route /newNight that renders the newNight.hbs form
-nightRouter.get('/newNight', (req, res) => {
-  res.render('night/newNight');
+//edit 
+nightRouter.get('/night/:nightId/edit', (req, res) => {
+  nightApi.getNightById(req.params.nightId)
 });
+
+//createe
+
+nightRouter.post('/night', (req, res) => {
+  nightApi.addNewNight(req.body)
+  .then(() => {
+    res.redirect('/night')
+  });
+});
+
+//delete
+
+nightRouter.delete('/:nightId', (req, res) => {
+  nightApi.deleteNight(req.params.nightId)
+  .then(() => {
+    res.redirect('/night')
+  });
+});
+
 
 /* Step 6
  *
