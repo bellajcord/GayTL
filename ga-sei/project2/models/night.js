@@ -19,14 +19,5 @@ const Night = new Schema({
 
 });
 
-
-
-//export the schema
-
-
-//function to get all nightlife
-
-
-
 //export created functions
 module.exports = mongoose.model('Night', Night)

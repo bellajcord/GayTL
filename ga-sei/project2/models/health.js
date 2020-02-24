@@ -1,8 +1,8 @@
-const mongoose = require('./connection.js');
+const mongoose = require('./connection');
 
 const  Schema  = mongoose.Schema;
 
-const healthSchema = new Schema({
+const Health = new Schema({
     name: {
         type: String,
         required: true,

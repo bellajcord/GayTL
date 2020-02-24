@@ -4,7 +4,7 @@ const express = require('express')
 
 // Step 2 Import the api files from the models
  
-const healthApi = require('../models/health.js')
+const Health = require('../models/health.js')
 
 // Step 3  Create a new router.
  
@@ -16,34 +16,33 @@ const healthRouter = express.Router()
  */
 
 //a GET index route that sends all restaurant to rest/index.hbs
-healthRouter.get('/health', (req, res) => {
-  healthApi.find().then(health => {
-    console.log(health);
-    res.render('health/health', {health})
+healthRouter.get("/", (req, res) => {
+  Health.find().then(healths => {
+    res.render('Health/index', {healths})
   });
 });
 
-// a get route that shows newRest.hbs
-healthRouter.get('/health/newHealth', (req, res) => {
-  res.render('health/newHealth')
+// a get route that shows new.hbs
+healthRouter.get("/new", (req, res) => {
+  res.render('Health/new')
 });
 
 //show route to render rest 
-healthRouter.get('/health/:healthId', (req, res) => {
-  healthApi.getHealthById(req.params.healthId).then(health => {
-    res.render('health/singleHealth', {health})
+healthRouter.get("/:healthId", (req, res) => {
+  Health.findById(req.params.healthId).then(healths => {
+    res.render('Health/show', {healths})
   });
 });
 
 //edit 
-healthRouter.get('/health/:healthId/edit', (req, res) => {
-  healthApi.getHealthById(req.params.healthId)
+healthRouter.get("/:healthId/edit", (req, res) => {
+  Health.findById(req.params.healthId)
 });
 
 //createe
 
-healthRouter.post('/health', (req, res) => {
-  healthApi.addNewHealth(req.body)
+healthRouter.post('/', (req, res) => {
+  Health.create(req.body)
   .then(() => {
     res.redirect('/health')
   });
@@ -52,7 +51,7 @@ healthRouter.post('/health', (req, res) => {
 //delete
 
 healthRouter.delete('/:healthId', (req, res) => {
-  healthApi.deleteHealth(req.params.healthId)
+  Health.findByIdAndRemove(req.params.healthId)
   .then(() => {
     res.redirect('/health')
   });
