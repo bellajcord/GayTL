@@ -21,4 +21,4 @@ const Health = new Schema({
 
 
 //export created functions
-module.exports = mongoose.model('Night', Night)
+module.exports = mongoose.model('Health', Health)
