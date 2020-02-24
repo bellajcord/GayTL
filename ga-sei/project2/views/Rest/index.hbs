@@ -1,0 +1,15 @@
+<main>
+    <h2>gAyTL Restaurants</h2>
+
+    {{#each rests}}
+
+    <div class="show-container">
+        <img width="200px" height="200px" src= {{img}}>
+        <a href="Rest/{{_id}}"><h3>See More</h3></a>
+        <p>{{name}} </p>
+    </div>
+
+    {{/each}}
+
+    <a href="Rest/new"><h2>Add More</h2></a>
+</main>
