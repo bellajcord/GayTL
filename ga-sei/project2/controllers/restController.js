@@ -4,7 +4,7 @@ const express = require('express')
 
 // Step 2 Import the api files from the models
 
-const restApi = require('../models/rest.js')
+const Rest = require('../models/rest.js')
 
 // Step 3  Create a new router.
  
@@ -14,33 +14,32 @@ const restRouter = express.Router()
  
 //a GET index route that sends all restaurant to rest/index.hbs
 restRouter.get('/', (req, res) => {
-  restApi.find().then(rest => {
-    console.log(health);
-    res.render('rest/rest', {rest})
+  Rest.find().then(rests => {
+    res.render('Rest/index', {rests})
   });
 });
 
-// a get route that shows newRest.hbs
-restRouter.get('/rest/newRest', (req, res) => {
-  res.render('rest/newRest')
+// a get route that shows new.hbs
+restRouter.get("/new", (req, res) => {
+  res.render("Rest/new");
 });
 
 //show route to render rest 
-restRouter.get('/rest/:restId', (req, res) => {
-  restApi.getRestById(req.params.restId).then(rest => {
-    res.render('rest/singleRest', {rest})
+restRouter.get("/:restId", (req, res) => {
+  Rest.findById(req.params.restId).then(rests => {
+    res.render('Rest/show', {rests})
   });
 });
 
 //edit 
-restRouter.get('/rest/:restId/edit', (req, res) => {
-  restApi.getRestById(req.params.restId)
+restRouter.get('/:restId/edit', (req, res) => {
+  Rest.findById(req.params.restId);
 });
 
 //createe
 
-restRouter.post('/rest', (req, res) => {
-  restApi.addNewRest(req.body)
+restRouter.post('/', (req, res) => {
+  Rest.create(req.body)
   .then(() => {
     res.redirect('/rest')
   });
@@ -49,7 +48,7 @@ restRouter.post('/rest', (req, res) => {
 //delete
 
 restRouter.delete('/:restId', (req, res) => {
-  restApi.deleteRest(req.params.restId)
+  Rest.findByIdAndRemove(req.params.restId)
   .then(() => {
     res.redirect('/rest')
   });
