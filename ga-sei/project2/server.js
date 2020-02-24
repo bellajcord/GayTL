@@ -20,7 +20,7 @@ const methodOverride = require('method-override')
 const { nightRouter } = require('./controllers/nightController.js')
 const { restRouter } = require('./controllers/restController.js')
 const { healthRouter } = require('./controllers/healthController.js')
-
+const { homeRouter } = require('./controllers/homeController.js')
 
 
 /* Step 3
@@ -65,9 +65,9 @@ app.set('view engine', 'hbs')
  * the paths defined in the router.
  */
 app.use('/health', healthRouter)
-app.use('/nightlife', nightRouter)
-app.use('/restaurants', restRouter)
-//app.use('/', indexRouter)
+app.use('/night', nightRouter)
+app.use('/rest', restRouter)
+app.use('/', homeRouter)
 
 /* Step 5
  *

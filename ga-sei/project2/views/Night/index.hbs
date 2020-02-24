@@ -1,17 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>gAyTL</title>
-    <link rel="stylesheet" href="/styles.css" type="text/css">
-</head>
-<body>
+<main>
+    <h2>gAyTL Nightlife</h2>
 
-    <!--
-      This is a place holder for the contents of the .hbs file that is
-      rendered.
-    -->
-    {{{body}}}
+    {{#each nights}}
 
-</body>
-</html>
+    <div class="show-container">
+        <img width="200px" height="200px" src= {{img}}>
+        <a href="Night/{{_id}}"><h3>See More</h3></a>
+        <p>{{name}} </p>
+    </div>
+
+    {{/each}}
+
+    <a href="Night/new"><h2>Add More</h2></a>
+</main>

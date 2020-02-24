@@ -1,64 +1,61 @@
 // Step 1 import express
- 
-const express = require('express')
+
+const express = require("express");
 
 // Step 2 Import the api files from the models
- 
-const nightApi = require('../models/night.js')
+
+const Night = require("../models/night");
 
 // Step 3  Create a new router.
- 
-const nightRouter = express.Router()
+
+const nightRouter = express.Router();
 
 /* Step 4
- * 
+ *
  * TODO: Put all request handlers here
  */
 
 
+
 //a GET index route that sends all restaurant to rest/index.hbs
-nightRouter.get('/night', (req, res) => {
-  nightApi.find().then(night => {
-    console.log(night);
-    res.render('night/night', {night})
+nightRouter.get("/", (req, res) => {
+  Night.find().then(nights => {
+    res.render("Night/index", { nights });
   });
 });
 
-// a get route that shows newRest.hbs
-nightRouter.get('/night/newNight', (req, res) => {
-  res.render('night/newNight')
+// a get route that shows new.hbs
+nightRouter.get("/new", (req, res) => {
+  res.render("Night/new");
 });
 
-//show route to render rest 
-nightRouter.get('/night/:nightId', (req, res) => {
-  nightApi.getNightById(req.params.nightId).then(night => {
-    res.render('night/singleNight', {night})
+//show route to render night by Id
+nightRouter.get("/:nightId", (req, res) => {
+  Night.findById(req.params.nightId).then(nights => {
+    res.render("Night/show", { nights });
   });
 });
 
-//edit 
-nightRouter.get('/night/:nightId/edit', (req, res) => {
-  nightApi.getNightById(req.params.nightId)
+//edit
+nightRouter.get("/:nightId/edit", (req, res) => {
+  Night.findById(req.params.nightId);
 });
 
 //createe
 
-nightRouter.post('/night', (req, res) => {
-  nightApi.addNewNight(req.body)
-  .then(() => {
-    res.redirect('/night')
+nightRouter.post("/", (req, res) => {
+  Night.create(req.body).then(() => {
+    res.redirect("/night");
   });
 });
 
 //delete
 
-nightRouter.delete('/:nightId', (req, res) => {
-  nightApi.deleteNight(req.params.nightId)
-  .then(() => {
-    res.redirect('/night')
+nightRouter.delete("/:nightId", (req, res) => {
+  Night.findByIdAndRemove(req.params.nightId).then(() => {
+    res.redirect("/night");
   });
 });
-
 
 /* Step 6
  *
@@ -67,4 +64,4 @@ nightRouter.delete('/:nightId', (req, res) => {
  */
 module.exports = {
   nightRouter
-}
+};

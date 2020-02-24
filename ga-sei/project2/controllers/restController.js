@@ -13,7 +13,7 @@ const restRouter = express.Router()
 // Step 4 TODO: Put all request handlers here
  
 //a GET index route that sends all restaurant to rest/index.hbs
-restRouter.get('/rest', (req, res) => {
+restRouter.get('/', (req, res) => {
   restApi.find().then(rest => {
     console.log(health);
     res.render('rest/rest', {rest})
