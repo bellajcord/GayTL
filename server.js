@@ -52,6 +52,8 @@ app.use(methodOverride('_method'))
  */
 app.use(express.static(__dirname+"public"))
 
+express.static('public')
+
 /* Step 3.b
  *
  * set the view engine of express to use the hbs (handlebars) package 
