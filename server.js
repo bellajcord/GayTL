@@ -52,7 +52,7 @@ app.use(methodOverride('_method'))
  */
 app.use(express.static(__dirname+"public"))
 
-express.static('public')
+app.use(express.static('public'))
 
 /* Step 3.b
  *
