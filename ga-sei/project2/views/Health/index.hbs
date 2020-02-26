@@ -1,15 +1,19 @@
 <main>
-    <h2>gAyTL Health and Community</h2>
+    <section class="secondary-main">
+    <h2 class="secondary-title"> Health and Community</h2>
 
+<div class="show-container">
     {{#each healths}}
 
-    <div class="show-container">
-        <img width="200px" height="200px" src= {{img}}>
-        <a href="Health/{{_id}}"><h3>See More</h3></a>
-        <p>{{name}} </p>
-    </div>
+    <a href="Health/{{_id}}" class="individual-item">
+        <img width="200px" height="200px" src= {{img}} class="individual-img">
+        
+        <p class="individual-name">{{name}} </p>
+   </a>
 
     {{/each}}
-
+ </div>
+ </section>
+ 
     <a href="Health/new"><h2>Add More</h2></a>
 </main>

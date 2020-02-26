@@ -1,35 +1,27 @@
-<main>
+<main class="edit-form-page">
 
-    <h2>Edit Restaurant</h2>
+<a class="d-inline-block mt-2 mb-4" href="/rest">Return To Previous Page</a>
+    
 
-    <a class="d-inline-block mt-2 mb-4" href="/rest">Return To Restaurant Page</a>
+     <section class="edit-form">
+    <h2>Edit {{rests.name}} </h2>
+
+    
     <div id="edit-form" class="rest-container-show">
 
-        <form action="/rest/{{rest._id}}?_method=PUT" method="POST">
+        <form action="/rest/{{rests._id}}?_method=PUT" method="POST">
         
-        <div class="form-group">
-            <label>Name</label>
-            <input class="form-control" type="text" name="name" id='name' value="{{rest.name}}">
-        </div>
+            Name: <input type="text" name="name" value="{{rests.name}}" /><br />
 
-        <div class="form-group">
-            <label>Description</label>
-            <input class="form-control" type="text" name="description" id='description' value="{{rest.description}}">
-        </div>
-        
-        <div class="form-group">
-            <label>Location</label>
-            <input class="form-control" type="text" name="location" id='location' value="{{rest.location}}">
-        </div>
+            Description: <input type="text" name="description" value="{{rests.description}}" /><br />
 
-        <div class="form-group">
-            <label>Image</label>
-            <input class="form-control" type="text" name="img" id='img' value="{{rest.img}}">
-        </div>   
+            Image: <input type="text" name="img" value="{{rests.location}}" /><br />
+            
+            Location: <input type="text" name="location" value="{{rests.img}}" /><br />
 
-        <input class="btn btn-sucess" type="submit" value="Update Restaurant">
-        
+            <input class="btn btn-sucess" type="submit" value="Update" />
         </form>
     </div>
+    </section>
 
 </main>

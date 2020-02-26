@@ -1,36 +1,32 @@
-<main>
+<main class="show-individual-page">
 
-	<a href="/rest/new" class="btn btn-primary float-right mb-4">Add Restaurant</a>
+	<a href="/rest/new" class="add-more">Add More</a>
 
-	<a href="/">Return to Home Page</a>
+	<a href="/rest" class="return-button">Return to Previous Page</a>
 
-	<div class="rest-container-show">
-		<table class="table">
-			<thead>
-				<th>Name</th>
-				<th>Description</th>
-				<th>Location</th>
-				<th>Img</th>
-			</thead>
-			{{#each rest}}
-			<tr>
-				<td>
-					{{name}}
-				</td>
-				<td>
-					{{description}}
-				</td>
-				<td>
-					{{Location}}
-				</td>
-				<td>
-					{{img}}
-				</td>
-			</tr>
-			{{/each}}
-		</table>
+<section class="individual-details">
+	<h2> {{rests.name}} </h2>
 
+	<div class="indiv-container">
+		<img src= {{rests.img}} >
+		<br>
+		<h3>Description:</h3>
+		<p>
+			{{rests.description}}
+		</p><br>
+		<h2>Location:</h2>
+		<p>
+			{{rests.location}}
+		</p><br>
+	</div>
+	</section>
+<section class="bottom-btn">
 		<form action="{{ rest.id }}?_method=DELETE" method="POST">
-			<input type="submit" value="Delete Restaurant"/>
+			<input class="btn btn-sucess" type="submit" value="Delete"/>
 		</form>
+
+		<a href="{{rests.id}}/edit">
+		<input class="btn btn-sucess" type="submit" value="Update"/>
+	</a>
+	</section>
 </main>

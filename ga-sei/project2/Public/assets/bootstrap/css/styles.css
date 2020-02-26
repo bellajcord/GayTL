@@ -1,0 +1,118 @@
+.secondary-main {
+    margin-top: 80px;
+    background-color: whitesmoke;
+    color: black;
+    text-align: center;
+}
+
+.show-containter {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    border: solid black 5px;
+  }
+
+.show-containter:hover {
+    box-shadow: 0px 2px 2px #888888;
+}
+
+.show-containter p, h3 {
+    margin: 5px;
+    width: 100%;
+}
+
+.individual__item {
+    background: var(--clr-accent);
+    overflow: hidden;
+  }
+  
+  .individual__img {
+    transition: transform 750ms cubic-bezier(.5, 0, .5, 1),
+    opacity 250ms linear;
+  }
+  
+  .individual__item:focus {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .individual__img:hover,
+  .individual__item:focus .individual__img {
+    transform: scale(1.2);
+    opacity: .5;
+  }
+
+.show-individual-page {
+  background-color: whitesmoke;
+  margin-top: 60px;
+}
+
+.individual-details {
+  margin-top: 80px;
+  position: relative;
+  text-align: center;
+}
+
+.add-more {
+  margin: 20px;
+  padding: 2em;
+
+}
+
+.bottom-btn {
+  text-align: center;
+  display: inline block;
+  padding: 1em;
+}
+
+.delete-btn {
+  padding: 1em;
+}
+
+.edit-form-page, 
+.add-new-page {
+  background-color: whitesmoke;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.form-control {
+  width: 100%;
+  text-align: center;
+
+}
+
+.btn-sucess {
+  background-color: white;
+  border: black solid 5px;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-sucess:hover {
+  opacity: 1;
+}
+
+
+.wrapper {
+  margin: 0 auto;
+  width: 100%
+}
+
+
+#handlebars-sandbox {
+  padding: 8px;
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)) ;
+  grid-auto-rows: minmax(264px, auto);
+  grid-gap: 20px;
+  margin-top: 20px
+}

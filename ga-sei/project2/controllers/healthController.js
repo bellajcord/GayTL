@@ -36,7 +36,17 @@ healthRouter.get("/:healthId", (req, res) => {
 
 //edit 
 healthRouter.get("/:healthId/edit", (req, res) => {
-  Health.findById(req.params.healthId)
+  Health.findById(req.params.healthId).then(healths => {
+    res.render("Health/edit", {healths})
+  });
+});
+
+//update
+healthRouter.put("/:healthId", (req, res) => {
+  Health.findByIdAndUpdate(req.params.healthId, req.body)
+  .then(() => {
+    res.redirect("/health");
+  });
 });
 
 //createe

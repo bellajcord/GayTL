@@ -32,10 +32,19 @@ restRouter.get("/:restId", (req, res) => {
 });
 
 //edit 
-restRouter.get('/:restId/edit', (req, res) => {
-  Rest.findById(req.params.restId);
+restRouter.get("/:restId/edit", (req, res) => {
+  Rest.findById(req.params.restId).then(rests => {
+    res.render("Rest/edit", { rests })
+  });
 });
 
+//update 
+restRouter.put("/:restId", (req, res) => {
+  Rest.findByIdAndUpdate(req.params.restId, req.body)
+  .then(() => {
+    res.redirect("/rest");
+  });
+});
 //createe
 
 restRouter.post('/', (req, res) => {

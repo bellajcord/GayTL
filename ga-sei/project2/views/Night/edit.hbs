@@ -1,35 +1,25 @@
-<main>
+<main class="edit-form-page">
 
-    <h2>Edit Nightlife</h2>
-
-    <a class="d-inline-block mt-2 mb-4" href="/Night">Return To Nightlife Page</a>
-    <div id="edit-form" class="Night-container-show">
-
-        <form action="/Night/{{Night._id}}?_method=PUT" method="POST">
+    <a class="d-inline-block mt-2 mb-4" href="/Night">Return To Previous Page</a>
+    
+    <section class="edit-form">
         
-        <div class="form-group">
-            <label>Name</label>
-            <input class="form-control" type="text" name="name" id='name' value="{{Night.name}}">
-        </div>
-
-        <div class="form-group">
-            <label>Description</label>
-            <input class="form-control" type="text" name="description" id='description' value="{{Night.description}}">
-        </div>
+        <h2>Edit {{nights.name}}</h2>
         
-        <div class="form-group">
-            <label>Location</label>
-            <input class="form-control" type="text" name="location" id='location' value="{{Night.location}}">
-        </div>
+        <form action="/night" method="POST">
+            Name: <input type="text" name="name" value="{{nights.name}}" /><br />
 
-        <div class="form-group">
-            <label>Image</label>
-            <input class="form-control" type="text" name="img" id='img' value="{{Night.img}}">
-        </div>   
+            Description: <input type="text" name="description" value="{{nights.description}}" /><br />
 
-        <input class="btn btn-sucess" type="submit" value="Update Nightlife">
-        
+            Image: <input type="text" name="img" value="{{nights.location}}" /><br />
+            
+            Location: <input type="text" name="location" value="{{nights.img}}" /><br />
+
+            <input class="btn btn-sucess" type="submit" value="Update" />
         </form>
-    </div>
+
+        
+
+    </section>
 
 </main>

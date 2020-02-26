@@ -38,7 +38,17 @@ nightRouter.get("/:nightId", (req, res) => {
 
 //edit
 nightRouter.get("/:nightId/edit", (req, res) => {
-  Night.findById(req.params.nightId);
+  Night.findById(req.params.nightId).then(nights => {
+    res.render("Night/edit", { nights })
+  });
+});
+
+//update
+nightRouter.put("/:nightId", (req, res) => {
+  Night.findByIdAndUpdate(req.params.nightId, req.body)
+    .then(() => {
+      res.redirect('/night');
+    });
 });
 
 //createe
