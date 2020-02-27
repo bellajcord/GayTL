@@ -10,7 +10,7 @@ text-align: center;
 display: inline-block;
 width: 30%;
 background: white;
-  border: 1px solid #B9D6C2;
+  border: 1px solid rgb(52, 53, 52);
   margin-bottom: 8px;
   margin-right: 8px;
   border-radius: 4px;
@@ -127,6 +127,11 @@ margin-top: 20px
 @media (max-width: 480px) {
   .show-container {
     display: inline;
+    background: white;
+  border: 1px solid rgb(52, 53, 52);
+  margin-bottom: 8px;
+  margin-right: 8px;
+  border-radius: 4px;
   }
   main {
     width: 100%;
