@@ -4,16 +4,14 @@
 
 
 
-    <div id="handlebars-sandbox"></div>
+    <div class="show-container">
        {{#each nights}}
-        <div class="show-container"> 
-            
-
+    
             <a href="Night/{{_id}}" class="individual-item">
                 <img width="200px" height="200px" src={{img}} class="individual-img">
                     <p class="individual-name">{{name}}</p>
             </a>
-        </div>
+    
          {{/each}}
     </div>
     
