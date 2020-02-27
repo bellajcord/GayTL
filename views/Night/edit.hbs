@@ -1,24 +1,24 @@
 <main class="edit-form-page">
 
     <a class="d-inline-block mt-2 mb-4" href="/Night">Return To Previous Page</a>
-    
+
     <section class="edit-form">
-        
+
         <h2>Edit {{nights.name}}</h2>
-        
+
         <form action="/night" method="POST">
             Name: <input type="text" name="name" value="{{nights.name}}" /><br />
-
+            <br />
             Description: <input type="text" name="description" value="{{nights.description}}" /><br />
-
+            <br />
             Image: <input type="text" name="img" value="{{nights.location}}" /><br />
-            
+            <br />
             Location: <input type="text" name="location" value="{{nights.img}}" /><br />
-
+            <br />
             <input class="btn btn-sucess" type="submit" value="Update" />
         </form>
 
-        
+
 
     </section>
 
