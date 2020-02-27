@@ -123,3 +123,12 @@ grid-auto-rows: minmax(264px, auto);
 grid-gap: 20px;
 margin-top: 20px
 }
+
+@media (max-width: 480px) {
+  .show-container {
+    display: none;
+  }
+  main {
+    width: 100%;
+  }
+}
