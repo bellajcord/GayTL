@@ -1,24 +1,37 @@
 <main class="add-new-page">
 
-<a href="/health">Return to Previous Page</a>
-	
+	<a href="/health">Return to Previous Page</a>
+
 	<h2>Add a health center!</h2>
 
-	
+
 
 	<div id="edit-form" class="nightlife-container-add">
 
 		<form action="/health" method="POST">
-			Name: <input type="text" name="name"/><br/>
-			<br />
-			Description: <input type="text" name="description"/><br/>
-			<br />
-			Image: <input type="text" name="img"/><br/>
-			<br />
-			Location: <input type="text" name="location"/><br/>
-			<br />
-			
-			<input class="btn btn-sucess" type="submit" value="Add"/>
+			<div class="form-row">
+				<div class="col-md-4 mb-3">
+					<label for="validationDefault01">Name</label>
+					<input type="text" class="form-control" id="validationDefault01" placeholder="Name" required>
+				</div>
+				<div class="col-md-4 mb-3">
+					<label for="validationDefault02">Description</label>
+					<input type="text" class="form-control" id="validationDefault02" placeholder="Description" required>
+				</div>
+				<div class="col-md-4 mb-3">
+					<label>Image</label>
+					<input type="text" placeholder="image url" />
+
+				</div>
+				<div class="col-md-4 mb-3">
+					<label for="validationDefault03">Location</label>
+					<input type="text" class="form-control" id="validationDefault03" placeholder="location" required>
+
+				</div>
+
+
+
+				<input class="btn btn-sucess" type="submit" value="Add" />
 		</form>
 
 	</div>
