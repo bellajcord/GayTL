@@ -17,10 +17,10 @@ const methodOverride = require('method-override')
  * import routers from controllers/
  *
  */
-const { nightRouter } = require('./controllers/nightController.js')
-const { restRouter } = require('./controllers/restController.js')
-const { healthRouter } = require('./controllers/healthController.js')
-const { homeRouter } = require('./controllers/homeController.js')
+const { nightRouter } = require('../controllers/nightController.js')
+const { restRouter } = require('../controllers/restController.js')
+const { healthRouter } = require('../controllers/healthController.js')
+const { homeRouter } = require('../controllers/homeController.js')
 
 
 /* Step 3
