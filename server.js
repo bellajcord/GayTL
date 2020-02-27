@@ -31,6 +31,7 @@ const { homeRouter } = require('./controllers/homeController.js')
 /* Step 3.a
  * ...to parse the body of the HTTP requests from a URL encoded string 
  */
+app.use(express.static(__dirname + '/public/'))
 app.use(express.urlencoded({extended: true}))
 
 /* Step 3.b 
@@ -50,9 +51,8 @@ app.use(methodOverride('_method'))
  * use the `./public` directory to host static resources such as css and
  * image files 
  */
-//app.use(express.static(__dirname+"/public"))
 
-app.use(express.static('/public'))
+// app.use(express.static('/public'))
 
 /* Step 3.b
  *
