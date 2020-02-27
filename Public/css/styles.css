@@ -132,6 +132,8 @@ margin-top: 20px
   margin-bottom: 8px;
   margin-right: 8px;
   border-radius: 4px;
+  max-width: 150;
+  min-width: 50;
   }
   main {
     width: 100%;
