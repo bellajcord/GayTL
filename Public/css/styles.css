@@ -101,11 +101,9 @@
 }
 
 
-.wrapper {
-  margin: 0 auto;
-  width: 100%
+.secondary-title {
+  padding: 1em;
 }
-
 
 #handlebars-sandbox {
   padding: 8px;
