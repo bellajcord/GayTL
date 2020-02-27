@@ -126,7 +126,7 @@ margin-top: 20px
 
 @media (max-width: 480px) {
   .show-container {
-    display: none;
+    display: inline;
   }
   main {
     width: 100%;
