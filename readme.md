@@ -1,39 +1,31 @@
-# mehn-template-project
+# GayTL
 
-# Setup A New Project From This Template
+### General Assembly SEI 26- Project 2
 
-If you are starting a new project do the following:
+* Trello board- https://trello.com/b/qcbIU1fi/gaytl
 
-1. copy/download this directory to where you new project is located and rename
-   it to the name of your project.
-1. change your directory (`cd`) into the copied project template
-1. `npm install`
-1. `node ./server.js`
-1. In a new terminal run `curl localhost:3000/helloworld`. You should see
-   `hello world!` as the output. From there your server template works!
-1. see the `controllers`, `models`, and `views` directories' `readme.md` files
+* Git hub- https://git.generalassemb.ly/bellajco/GayTL
 
-### Testing Your Api
+* Link to deployed site- https://fathomless-ravine-38683.herokuapp.com/
 
-Run
-    ./testWebAPI -h
-for instructions on how to test your web API. In short this is a BASH script
-wrapper around the `curl` command which is used for making http requests.
+## Overview
+Create a REST API. For this project I created a database of gay friendly bars, restaurants, and community resources. 
 
-# Setup A New Project Without This Template
+## Technology Used
 
-If you want to start a project without using this template directory do the
-following:
+* Javascript, JQuery, Css. Built with NodeJs and express, Uilitizing Handlebars for the View and MongoDb for the Database
 
 
-1. `mkdir <project-name>`
-1. `cd <project-name>`
-1. `echo "# <project-name>" > readme.md`
-1. `git init`
-1. `echo "node_modules/" > .gitignore`
-1. `git add readme.md `
-1. `git commit -m "init repo with readme.md"`
-1. `npm init`
-1. `npm install express hbs method-override`
-1. `mkdir models views controllers`
-1. `touch ./server.js`
+Wireframe:
+![alt text](Image2.png)
+![alt text](secondary.png)
+
+ERD:
+![alt text](ERD.png)
+![alt text](Image3.png)
+
+Final Product:
+![alt text](homepage.png)
+![alt text](Rest.png)
+![alt text](Night.png)
+![alt text](Health.png)
