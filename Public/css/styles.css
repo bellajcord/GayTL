@@ -5,17 +5,17 @@
     text-align: center;
 }
 
-.show-containter {
+.show-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     border: solid black 5px;
   }
 
-.show-containter:hover {
+.show-container:hover {
     box-shadow: 0px 2px 2px #888888;
 }
 
-.show-containter p, h3 {
+.show-container p, h3 {
     margin: 5px;
     width: 100%;
 }
