@@ -1,19 +1,19 @@
 <main>
     <section class="secondary-main">
         <h2 class="secondary-title">Restaurants</h2>
-
-        <div class="show-container">
+<div id="handlebars-sandbox"></div>
+        
             {{#each rests}}
-
+<div class="show-container">
             <a href="Rest/{{_id}}" class="individual-item">
                 <img width="200px" height="200px" src={{img}} class="individual-img">
 
                 <p class="individual-name">{{name}} </p>
 
-
+</div>
                 {{/each}}
 
-        </div>
+        
     </section>
     <a href="Rest/new">
         <h2>Add More</h2>

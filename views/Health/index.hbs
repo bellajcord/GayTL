@@ -2,17 +2,17 @@
     <section class="secondary-main">
     <h2 class="secondary-title"> Health and Community</h2>
 
-<div class="show-container">
+<div id="handlebars-sandbox"></div>
     {{#each healths}}
-
+<div class="show-container">
     <a href="Health/{{_id}}" class="individual-item">
         <img width="200px" height="200px" src= {{img}} class="individual-img">
         
         <p class="individual-name">{{name}} </p>
    </a>
-
+</div>
     {{/each}}
- </div>
+ 
  </section>
  
     <a href="Health/new"><h2>Add More</h2></a>
