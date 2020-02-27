@@ -138,4 +138,12 @@ margin-top: 20px
   main {
     width: 100%;
   }
+  .show-container:hover {
+    box-shadow: 0px 2px 2px #888888;
+  }
+  
+  .show-container p, h3 {
+    margin: 5px;
+    width: 100%;
+  }
 }
